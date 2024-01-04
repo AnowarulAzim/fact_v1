@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Anchor Tag Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+        /* Regular link styles */
+        nav a {
+            color: blue;
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Active state styles */
+        nav a.active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" onclick="setActiveLink(this)">Home</a>
+        <a href="#" onclick="setActiveLink(this)">About</a>
+        <a href="#" onclick="setActiveLink(this)">Contact</a>
+    </nav>
+
+<script type="text/javascript">
+    function setActiveLink(clickedElement) {
+        // Remove the 'active' class from all links
+        var links = document.querySelectorAll('nav a');
+        links.forEach(function(link) {
+            link.classList.remove('active');
+        });
+
+        // Add the 'active' class to the clicked link
+        clickedElement.classList.add('active');
+    }
+</script>
+</body>
+</html>
